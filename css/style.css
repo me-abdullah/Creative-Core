@@ -539,8 +539,47 @@ h6 {
   left: 0;
   z-index: -9999;
 } */
- #particles-js{
+ /* #particles-js{
   width: 100%;
   height: 100vh;
   position: absolute;
- }
+ } */
+
+ .parallax {
+  /* The image used */
+  background-image: url('../img/paralax.jpeg');
+
+  /* Set a specific height */
+  height: 40vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.parallax::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Add a grey or black shade */
+  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+}
+.star-rating {
+  display: flex;
+  margin-top: -10px;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #ccc; /* Default star color */
+}
+
+.star.filled {
+  color: #000000; /* Filled star color */
+}
