@@ -124,7 +124,7 @@ body {
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-  color: var(--primary);
+  color: var(--custom-dark);
 }
 
 @media (max-width: 991.98px) {
@@ -226,7 +226,7 @@ body {
   justify-content: center;
   background: #ffffff !important;
   border-radius: 50px;
-  border: 1px dashed var(--primary) !important;
+  border: 1px dashed var(--custom-dark) !important;
 }
 
 /*** About ***/
@@ -246,6 +246,13 @@ body {
   background: var(--custom-light);
   transform: skew(20deg);
   z-index: 1;
+  /* background-image: repeating-linear-gradient(
+    to right,
+    transparent 0 150px,
+    #ab182b 150px 151px
+  ),
+  repeating-linear-gradient(to bottom, transparent 0 150px, #ab182b 150px 151px),
+  linear-gradient(to right, #cdcdcdcc, #cdcdcdcc), url('img/images/bgmock_.jpg'); */
 }
 
 /*** Category ***/
@@ -390,7 +397,7 @@ body {
 }
 
 .footer .btn.btn-social:hover {
-  color: var(--primary);
+  color: var(--custom-dark);
   border-color: var(--light);
 }
 
@@ -404,13 +411,16 @@ body {
   text-transform: capitalize;
   transition: 0.3s;
 }
-
+.footer .btn .btn-link:hover{
+  color: var(--light) !important;
+}
 .footer .btn.btn-link::before {
   position: relative;
   content: "\f105";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   margin-right: 10px;
+  color: var(--light);
 }
 
 .footer .btn.btn-link:hover {
@@ -443,6 +453,8 @@ body {
   padding-right: 0;
   border-right: none;
 }
+
+
 .customlight{
   color: #d20f2d;
 }
@@ -455,7 +467,9 @@ body {
 .customdarkbg{
   background: #ab182b;
 }
-
+.footerbg{
+  background: linear-gradient(to top right, #d20f2d 50%, #ab182b 50%) !important;
+}
 .buttonanimation {
   background: linear-gradient(to top right, #d20f2d 50%, #ab182b 50%);
   background-size: 200% 100%;
@@ -494,7 +508,7 @@ body {
 .cursor-dot {
   width: 10px;
   height: 10px;
-  background-color: #000000;
+  background-color: #ab182b;
 }
 .cursor-outline {
   width: 40px;
@@ -548,6 +562,7 @@ h6 {
 
   backdrop-filter: blur(10px) !important; /* Adjust the blur effect */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Optional shadow */
+  
 }
 
 #navbar a {
@@ -619,6 +634,7 @@ h6 {
   text-align: center;
   overflow: hidden;
   position: relative;
+ 
 }
 .banner .slider{
   position: absolute;
@@ -630,6 +646,7 @@ h6 {
   transform: perspective(1000px);
   animation: autoRun 20s linear infinite;
   z-index: 2;
+  /* box-shadow: 5px 5px 10px; */
 }
 @keyframes autoRun{
   from{
@@ -650,6 +667,7 @@ h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  
 }
 .banner .content{
   position: absolute;
@@ -725,9 +743,9 @@ h6 {
    background-image: repeating-linear-gradient(
       to right,
       transparent 0 150px,
-      #0001 150px 151px
+      #ab182b 150px 151px
     ),
-    repeating-linear-gradient(to bottom, transparent 0 150px, #0001 150px 151px),
+    repeating-linear-gradient(to bottom, transparent 0 150px, #ab182b 150px 151px),
     linear-gradient(to right, #cdcdcdcc, #cdcdcdcc), url('img/images/bgmock_.jpg');
 }
 
