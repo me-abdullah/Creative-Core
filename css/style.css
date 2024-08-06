@@ -521,11 +521,13 @@ h6 {
     192,
     192,
     192,
-    0.5
+    0.2
   ) !important; /* Slightly transparent white background */
+
   backdrop-filter: blur(10px) !important; /* Adjust the blur effect */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Optional shadow */
 }
+
 #navbar a {
   font-weight: bold;
 }
