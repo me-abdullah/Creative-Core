@@ -7,6 +7,8 @@
   --light: #effdf5;
   /* --dark: #0E2E50; */
   --dark: #000000;
+  --custom-light:#d20f2d;
+  --custom-dark:#ab182b;
 }
 
 body {
@@ -240,7 +242,8 @@ body {
   left: -50%;
   width: 100%;
   height: 100%;
-  background: var(--primary);
+  /* background: var(--primary); */
+  background: var(--custom-light);
   transform: skew(20deg);
   z-index: 1;
 }
@@ -440,8 +443,21 @@ body {
   padding-right: 0;
   border-right: none;
 }
+.customlight{
+  color: #d20f2d;
+}
+.customlightbg{
+  background: #d20f2d;
+}
+.customdark{
+  color: #ab182b;
+}
+.customdarkbg{
+  background: #ab182b;
+}
+
 .buttonanimation {
-  background: linear-gradient(to right, #ebebeb 50%, black 50%);
+  background: linear-gradient(to top right, #d20f2d 50%, #ab182b 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all ease 0.3s;
@@ -458,12 +474,12 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: #d20f2d;
   /* background: red; */
   border-radius: 5px;
 }
 ::selection {
-  background: #000000;
+  background: #d20f2d;
   color: #fff;
 }
 
@@ -590,6 +606,9 @@ h6 {
 
 .star.filled {
   color: #000000; /* Filled star color */
+}
+.star.redstar {
+  color: #ab182b ; /* Filled star color */
 }
 
 
