@@ -86,10 +86,12 @@ document.addEventListener("mousemove", (e) => {
   cursorOutline.style.left = `${posX}px`;
   cursorOutline.style.top = `${posY}px`;
 });
+
 VanillaTilt.init(document.querySelectorAll(".box"), {
   max: 25,
   speed: 400,
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.getElementById("navbar");
 
@@ -108,4 +110,27 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("beforeunload", function () {
     window.removeEventListener("scroll", handleScroll);
   });
+});
+
+
+//section
+
+$(window).on('scroll', function(){
+  function isScrollIntoView(elem, index) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(window).height()*.5;
+    if(elemBottom <= docViewBottom && elemTop >= docViewTop) {
+      $(elem).addClass('active');
+    }
+    if(!(elemBottom <= docViewBottom)) {
+      $(elem).removeClass('active');
+    }
+    var MainTimelineContainer = $('#vertical-scrollable-timeline')[0];
+    var MainTimelineContainerBottom = MainTimelineContainer.getBoundingClientRect().bottom - $(window).height()*.5;
+    $(MainTimelineContainer).find('.inner').css('height',MainTimelineContainerBottom+'px');
+  }
+  var timeline = $('#vertical-scrollable-timeline li');
+  Array.from(timeline).forEach(isScrollIntoView);
 });
