@@ -256,6 +256,17 @@ body {
 }
 
 /*** Category ***/
+.customcat{
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0 150px,
+    #000000 150px 151px
+  ),
+  repeating-linear-gradient(to bottom, transparent 0 150px, #000000 150px 151px),
+  linear-gradient(to right, #cdcdcdcc, #cdcdcdcc), url('img/images/bgmock_.jpg');
+}
+
+
 .cat-item div {
   background: #ffffff;
   border: 1px dashed rgba(0, 0, 0, 1);
@@ -263,7 +274,7 @@ body {
 }
 
 .cat-item:hover div {
-  background: var(--primary);
+  background: var(--custom-light);
   border-color: transparent;
 }
 
@@ -456,16 +467,16 @@ body {
 
 
 .customlight{
-  color: #d20f2d;
+  color: var(--custom-light);
 }
 .customlightbg{
-  background: #d20f2d;
+  background: var(--custom-light);
 }
 .customdark{
-  color: #ab182b;
+  color: var(--custom-dark);
 }
 .customdarkbg{
-  background: #ab182b;
+  background: var(--custom-dark);
 }
 .footerbg{
   background: linear-gradient(to top right, #d20f2d 50%, #ab182b 50%) !important;
@@ -620,10 +631,7 @@ h6 {
 }
 
 .star.filled {
-  color: #000000; /* Filled star color */
-}
-.star.redstar {
-  color: #ab182b ; /* Filled star color */
+  color: var(--custom-light); /* Filled star color */
 }
 
 
