@@ -2,179 +2,184 @@
   "use strict";
 
   // Spinner
-  var spinner = function () {
-    setTimeout(function () {
-      if ($("#spinner").length > 0) {
-        $("#spinner").removeClass("show");
-      }
-    }, 1);
+  const hideSpinner = () => {
+      setTimeout(() => {
+          const spinnerElement = $("#spinner");
+          if (spinnerElement.length > 0) {
+              spinnerElement.removeClass("show");
+          }
+      }, 1);
   };
-  spinner();
+  hideSpinner();
 
-  // Initiate the wowjs
+  // Initialize wow.js
   new WOW().init();
 
   // Sticky Navbar
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 45) {
-      $(".nav-bar").addClass("sticky-top");
-    } else {
-      $(".nav-bar").removeClass("sticky-top");
-    }
+  $(window).on("scroll", function () {
+      const navbar = $(".nav-bar");
+      if ($(this).scrollTop() > 45) {
+          navbar.addClass("sticky-top");
+      } else {
+          navbar.removeClass("sticky-top");
+      }
   });
 
-  // Back to top button
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-      $(".back-to-top").fadeIn("slow");
-    } else {
-      $(".back-to-top").fadeOut("slow");
-    }
-  });
-  $(".back-to-top").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
-    return false;
+  // Back to Top Button
+  $(window).on("scroll", function () {
+      const backToTopBtn = $(".back-to-top");
+      if ($(this).scrollTop() > 300) {
+          backToTopBtn.fadeIn("slow");
+      } else {
+          backToTopBtn.fadeOut("slow");
+      }
   });
 
-  // Header carousel
+  $(".back-to-top").on("click", function () {
+      $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+      return false;
+  });
+
+  // Header Carousel
   $(".header-carousel").owlCarousel({
-    autoplay: true,
-    smartSpeed: 1500,
-    items: 1,
-    dots: true,
-    loop: true,
-    nav: true,
-    navText: [
-      '<i class="bi bi-chevron-left"></i>',
-      '<i class="bi bi-chevron-right"></i>',
-    ],
+      autoplay: true,
+      smartSpeed: 1500,
+      items: 1,
+      dots: true,
+      loop: true,
+      nav: true,
+      navText: [
+          '<i class="bi bi-chevron-left"></i>',
+          '<i class="bi bi-chevron-right"></i>',
+      ],
   });
 
-  // Testimonials carousel
+  // Testimonials Carousel
   $(".testimonial-carousel").owlCarousel({
-    autoplay: true,
-    smartSpeed: 1000,
-    margin: 24,
-    dots: false,
-    loop: true,
-    nav: true,
-    navText: [
-      '<i class="bi bi-arrow-left"></i>',
-      '<i class="bi bi-arrow-right"></i>',
-    ],
-    responsive: {
-      0: {
-        items: 1,
+      autoplay: true,
+      smartSpeed: 1000,
+      margin: 24,
+      dots: false,
+      loop: true,
+      nav: true,
+      navText: [
+          '<i class="bi bi-arrow-left"></i>',
+          '<i class="bi bi-arrow-right"></i>',
+      ],
+      responsive: {
+          0: {
+              items: 1,
+          },
+          992: {
+              items: 2,
+          },
       },
-      992: {
-        items: 2,
-      },
-    },
   });
 })(jQuery);
 
-document.addEventListener("mousemove", (e) => {
-  const posX = e.clientX;
-  const posY = e.clientY;
-
+// Custom Cursor
+document.addEventListener("mousemove", (event) => {
+  const posX = event.clientX;
+  const posY = event.clientY;
   const cursorDot = document.querySelector(".cursor-dot");
   const cursorOutline = document.querySelector(".cursor-outline");
 
   cursorDot.style.left = `${posX}px`;
   cursorDot.style.top = `${posY}px`;
-
   cursorOutline.style.left = `${posX}px`;
   cursorOutline.style.top = `${posY}px`;
 });
 
+// Initialize VanillaTilt
 VanillaTilt.init(document.querySelectorAll(".box"), {
   max: 25,
   speed: 400,
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+// Navbar Blur on Scroll
+document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
 
-  function handleScroll() {
-    if (window.scrollY >= 90) {
-      // Adjust the scroll threshold as needed
-      navbar.classList.add("navbar-blur");
-    } else {
-      navbar.classList.remove("navbar-blur");
-    }
-  }
+  const handleScroll = () => {
+      if (window.scrollY >= 90) {
+          navbar.classList.add("navbar-blur");
+      } else {
+          navbar.classList.remove("navbar-blur");
+      }
+  };
 
   window.addEventListener("scroll", handleScroll);
 
   // Cleanup on page unload
-  window.addEventListener("beforeunload", function () {
-    window.removeEventListener("scroll", handleScroll);
+  window.addEventListener("beforeunload", () => {
+      window.removeEventListener("scroll", handleScroll);
   });
 });
 
+// Section Scroll Animation
+$(window).on('scroll', function() {
+  const timelineItems = $('#vertical-scrollable-timeline li');
+  const checkInView = (elem, index) => {
+      const docViewTop = $(window).scrollTop();
+      const docViewBottom = docViewTop + $(window).height();
+      const elemTop = $(elem).offset().top;
+      const elemBottom = elemTop + $(window).height() * 0.5;
 
-//section
+      if (elemBottom <= docViewBottom && elemTop >= docViewTop) {
+          $(elem).addClass('active');
+      } else {
+          $(elem).removeClass('active');
+      }
 
-$(window).on('scroll', function(){
-  function isScrollIntoView(elem, index) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(window).height()*.5;
-    if(elemBottom <= docViewBottom && elemTop >= docViewTop) {
-      $(elem).addClass('active');
-    }
-    if(!(elemBottom <= docViewBottom)) {
-      $(elem).removeClass('active');
-    }
-    var MainTimelineContainer = $('#vertical-scrollable-timeline')[0];
-    var MainTimelineContainerBottom = MainTimelineContainer.getBoundingClientRect().bottom - $(window).height()*.5;
-    $(MainTimelineContainer).find('.inner').css('height',MainTimelineContainerBottom+'px');
+      const mainTimeline = $('#vertical-scrollable-timeline')[0];
+      const timelineHeight = mainTimeline.getBoundingClientRect().bottom - $(window).height() * 0.5;
+      $(mainTimeline).find('.inner').css('height', `${timelineHeight}px`);
+  };
+
+  timelineItems.each(checkInView);
+});
+
+// Carousel Functionality
+const nextButton = document.getElementById('next');
+const prevButton = document.getElementById('prev');
+const carousel = document.querySelector('.carousel');
+const listHTML = document.querySelector('.carousel .list');
+const seeMoreButtons = document.querySelectorAll('.seeMore');
+const backButton = document.getElementById('back');
+
+let unacceptClickTimeout;
+
+const showSlider = (direction) => {
+  nextButton.style.pointerEvents = 'none';
+  prevButton.style.pointerEvents = 'none';
+
+  carousel.classList.remove('next', 'prev');
+  const items = document.querySelectorAll('.carousel .list .item');
+  if (direction === 'next') {
+      listHTML.appendChild(items[0]);
+      carousel.classList.add('next');
+  } else {
+      listHTML.prepend(items[items.length - 1]);
+      carousel.classList.add('prev');
   }
-  var timeline = $('#vertical-scrollable-timeline li');
-  Array.from(timeline).forEach(isScrollIntoView);
-});
 
+  clearTimeout(unacceptClickTimeout);
+  unacceptClickTimeout = setTimeout(() => {
+      nextButton.style.pointerEvents = 'auto';
+      prevButton.style.pointerEvents = 'auto';
+  }, 2000);
+};
 
-let nextButton = document.getElementById('next');
-let prevButton = document.getElementById('prev');
-let carousel = document.querySelector('.carousel');
-let listHTML = document.querySelector('.carousel .list');
-let seeMoreButtons = document.querySelectorAll('.seeMore');
-let backButton = document.getElementById('back');
+nextButton.addEventListener('click', () => showSlider('next'));
+prevButton.addEventListener('click', () => showSlider('prev'));
 
-nextButton.onclick = function(){
-    showSlider('next');
-}
-prevButton.onclick = function(){
-    showSlider('prev');
-}
-let unAcceppClick;
-const showSlider = (type) => {
-    nextButton.style.pointerEvents = 'none';
-    prevButton.style.pointerEvents = 'none';
-
-    carousel.classList.remove('next', 'prev');
-    let items = document.querySelectorAll('.carousel .list .item');
-    if(type === 'next'){
-        listHTML.appendChild(items[0]);
-        carousel.classList.add('next');
-    }else{
-        listHTML.prepend(items[items.length - 1]);
-        carousel.classList.add('prev');
-    }
-    clearTimeout(unAcceppClick);
-    unAcceppClick = setTimeout(()=>{
-        nextButton.style.pointerEvents = 'auto';
-        prevButton.style.pointerEvents = 'auto';
-    }, 2000)
-}
 seeMoreButtons.forEach((button) => {
-    button.onclick = function(){
-        carousel.classList.remove('next', 'prev');
-        carousel.classList.add('showDetail');
-    }
+  button.addEventListener('click', () => {
+      carousel.classList.remove('next', 'prev');
+      carousel.classList.add('showDetail');
+  });
 });
-backButton.onclick = function(){
-    carousel.classList.remove('showDetail');
-}
+
+backButton.addEventListener('click', () => {
+  carousel.classList.remove('showDetail');
+});
