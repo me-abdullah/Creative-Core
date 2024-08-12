@@ -662,7 +662,7 @@ h6 {
 
 #main_01 h1 {
   font-family: "Karantina", system-ui;
-  font-size: 10vw;
+  font-size: 8vw;
   line-height: 0.8em;
 }
 
@@ -1292,8 +1292,9 @@ Properties Style
 }
 
 #men .section-heading {
-  margin-bottom: 60px;
+  margin-bottom: 60px; 
 }
+
 
 #men .item .down-content {
   padding-top: 30px;
