@@ -162,45 +162,46 @@
       <!-- Header Start -->
       <div id="patch-section">
         <div class="slider-patch">
-            <div class="list-patch">
-                <div class="item-patch">
-                    <img src="img/portfolio/Extra/port-01.png" />
-                </div>
-                <div class="item-patch">
-                    <img src="img/portfolio/Extra/port-02.png" />
-                </div>
-                <div class="item-patch">
-                    <img src="img/portfolio/Extra/port-03.png" />
-                </div>
-                <div class="item-patch">
-                    <img src="img/portfolio/Extra/port-04.png" />
-                </div>
-                <div class="item-patch">
-                    <img src="img/portfolio/Extra/port-05.png" />
-                </div>
-                <div class="item-patch">
-                    <img src="img/portfolio/Extra/port-06.png" />
-                </div>
-                <div class="item-patch">
-                    <img src="img/portfolio/Extra/port-07.png" />
-                </div>
-                <div class="item-patch">
-                    <img src="img/portfolio/Extra/port-08.png" />
-                </div>
-                <div class="item-patch">
-                    <img src="img/portfolio/Extra/port-09.png" />
-                </div>
+          <div class="list-patch">
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-01.png" />
             </div>
-            <div class="circle-patch">
-                Discover Custom Patches Embroidery, Vector Art, Digitizing, and Design
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-02.png" />
             </div>
-            <div class="arow-patch">
-                <button id="prev"><</button>
-                <button id="next">></button>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-03.png" />
             </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-04.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-05.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-06.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-07.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-08.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-09.png" />
+            </div>
+          </div>
+          <div class="circle-patch">
+            Discover Custom Patches Embroidery, Vector Art, Digitizing, and
+            Design
+          </div>
+          <div class="arow-patch">
+            <button id="prev"><</button>
+            <button id="next">></button>
+          </div>
         </div>
-    </div>
-    
+      </div>
+
       <!-- Header End -->
 
       <!-- Search Start -->
@@ -249,6 +250,70 @@
         </div>
       </div>
       <!-- Search End -->
+
+      <!-- /...patch-slider.. -->
+
+      <section class="slider-container">
+        <div class="slider-images">
+          <div class="slider-img">
+            <img src="img/patch-slider/patch-07.jpeg" alt="1" />
+            <h1>3D Effect</h1>
+            <div class="details">
+              <h2>3D Effect</h2>
+              <p>Dynamic 3D Design</p>
+            </div>
+          </div>
+          <div class="slider-img">
+            <img src="img/patch-slider/patch-06.jpeg" alt="2" />
+            <h1>PVC Patch</h1>
+            <div class="details">
+              <h2>PVC Patch</h2>
+              <p>Durable PVC Craft</p>
+            </div>
+          </div>
+          <div class="slider-img">
+            <img src="img/patch-slider/patch-05.jpeg" alt="3" />
+            <h1>Appliqué Patch</h1>
+            <div class="details">
+              <h2>Appliqué Patch</h2>
+              <p>Elegant Appliqué Art</p>
+            </div>
+          </div>
+          <div class="slider-img active">
+            <img src="img/patch-slider/patch-04.jpeg" alt="4" />
+            <h1>Leather Patch</h1>
+            <div class="details">
+              <h2>Leather Patch</h2>
+              <p>Premium Leather Touch</p>
+            </div>
+          </div>
+          <div class="slider-img">
+            <img src="img/patch-slider/patch-03.jpeg" alt="5" />
+            <h1>Embroidered Patch</h1>
+            <div class="details">
+              <h2>Embroidered Patch</h2>
+              <p>Classic Embroidered Style</p>
+            </div>
+          </div>
+          <div class="slider-img">
+            <img src="img/patch-slider/patch-02.jpeg" alt="6" />
+            <h1>Colorful Embroidery</h1>
+            <div class="details">
+              <h2>Colorful Embroidery</h2>
+              <p>Vibrant Thread Creations</p>
+            </div>
+          </div>
+          <div class="slider-img">
+            <img src="img/patch-slider/patch-01.jpeg" alt="7" />
+            <h1>Fabric Art</h1>
+            <div class="details">
+              <h2>Fabric Art</h2>
+              <p>Artistic Fabric Expressions</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Footer Start -->
       <div
         class="container-fluid footerbg text-white-50 footer pt-5 mt-5 wow fadeIn"
@@ -418,5 +483,14 @@
     <script src="assetss/js/counter.js"></script>
     <script src="assetss/js/custom.js"></script>
     <script defer src="js/circle-patch.js"></script>
+    <script src="lib/jQuery/jQuery.js"></script>
+    <script>
+      jQuery(document).ready(function ($) {
+        $(".slider-img").on("click", function () {
+          $(".slider-img").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
   </body>
 </html>
