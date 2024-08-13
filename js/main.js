@@ -183,3 +183,4 @@ seeMoreButtons.forEach((button) => {
 backButton.addEventListener('click', () => {
   carousel.classList.remove('showDetail');
 });
+
