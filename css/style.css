@@ -1577,7 +1577,8 @@ Properties Style
 }
 #header_section .carousel .list .item .introduce .des{
   font-size: small;
-  color: #5559;
+  color: var(--dark);
+  text-align: justify;
 }
 #header_section .carousel .list .item .introduce .seeMore{
   font-family: Poppins;
