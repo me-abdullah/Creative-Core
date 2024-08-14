@@ -4,6 +4,7 @@
   --light: #effdf5;
   --dark: #000000;
   --custom-light: #d20f2d;
+  --w-column: 200px;
   --custom-dark: #ab182b;
   --white-color: #ffffff;
   --primary-color: #13547a;
@@ -2541,3 +2542,5 @@ button {
     /* Adjusted font size */
   }
 }
+
+

@@ -44,11 +44,11 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
   </head>
+
   <body>
     <!-- Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
-
     <div class="container-xxl bg-white p-0 cutomdiv">
       <!-- Spinner Start -->
       <div
@@ -161,34 +161,45 @@
       </div>
       <!-- Navbar End -->
 
-      <!-- Header Start -->
-
-      <div class="container-fluid header bg-white p-0">
-        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-          <div class="col-md-6 p-5 mt-lg-5">
-            <h1 class="display-5 animated fadeIn mb-4 typing-demo">
-              Find A <span class="customlight">Perfect Patch</span>
-            </h1>
-            <p class="animated fadeIn mb-4 pb-2">
-              Find the perfect patch for any occasion with our expert digitizing
-              services. Our careful attention and creativity ensure each patch
-              meets your specific needs, adding a unique touch to every event.
-            </p>
-            <a
-              href=""
-              class="btn bg-dark text-white py-3 px-5 me-3 animated fadeIn buttonanimation"
-              >Get Started</a
-            >
-          </div>
-          <div class="col-md-6 animated fadeIn">
-            <div class="owl-carousel header-carousel">
-              <div class="owl-carousel-item">
-                <img class="img-fluid" src="img/patches/custom-g.gif" alt="" />
-              </div>
-              <!-- <div class="owl-carousel-item">
-                <img class="img-fluid" src="img/patches/image004.gif" alt="" />
-              </div> -->
+       <!-- Header Start -->
+       <div id="patch-section">
+        <div class="slider-patch">
+          <div class="list-patch">
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-01.png" />
             </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-02.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-03.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-04.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-05.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-06.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-07.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-08.png" />
+            </div>
+            <div class="item-patch">
+              <img src="img/portfolio/Extra/port-09.png" />
+            </div>
+          </div>
+          <div class="circle-patch">
+            Discover Custom Patches Embroidery, Vector Art, Digitizing, and
+            Design
+          </div>
+          <div class="arow-patch">
+            <button id="prev"><</button>
+            <button id="next">></button>
           </div>
         </div>
       </div>
@@ -624,5 +635,15 @@
 
     <!-- Template Javascript -->
     <script defer src="js/main.js"></script>
+    <script defer src="js/circle-patch.js"></script>
+    <script src="lib/jQuery/jQuery.js"></script>
+    <script>
+      jQuery(document).ready(function ($) {
+        $(".slider-img").on("click", function () {
+          $(".slider-img").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+      </script>
   </body>
 </html>
