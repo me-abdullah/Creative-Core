@@ -611,7 +611,7 @@ h6 {
 }
 
 .parallax {
-  background-image: url('../img/paralax.jpeg');
+  background-image: url('../img/paralax.png');
   height: 40vh;
   background-attachment: fixed;
   background-position: center;
@@ -881,7 +881,7 @@ h6 {
 }
 
 .timeline-section {
-  background-image: url('../img/paralax.jpeg');
+  background-image: url('../img/paralax.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -982,7 +982,7 @@ h6 {
 
 .bg-about {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('../img/paralax.jpeg'), no-repeat center center;
+    url('../img/paralax.png'), no-repeat center center;
   background-size: cover;
   border: 4px solid var(--custom-dark);
   border-radius: 20px;
