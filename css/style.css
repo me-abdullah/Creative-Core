@@ -2218,7 +2218,7 @@ button {
   /* font-family: monospace; */
   cursor: pointer;
   z-index: 1000;
-  display: none !important;
+  /* display: none !important; */
 }
 
 #prev {
