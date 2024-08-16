@@ -1847,7 +1847,7 @@ button {
 
 .arrows {
   position: absolute;
-  bottom: 10px;
+  bottom: 100px;
   width: 1140px;
   max-width: 90%;
   display: flex;
@@ -1856,8 +1856,8 @@ button {
   transform: translateX(-50%);
 }
 
-#prev,
-#next {
+#header-button
+ #prev,#next {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -1868,6 +1868,7 @@ button {
   left: 10%;
   background: var(--custom-dark);
   color: var(--light);
+  
 }
 
 #next {
@@ -2202,8 +2203,7 @@ button {
   padding: 10px 20px;
 }
 
-#prev,
-#next {
+.slider-patch .content-patch button #prev,#next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -2215,7 +2215,7 @@ button {
   background-color: var(--custom-dark);
   color: #eee;
   font-size: x-large;
-  font-family: monospace;
+  /* font-family: monospace; */
   cursor: pointer;
   z-index: 1000;
   display: none !important;
