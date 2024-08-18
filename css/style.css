@@ -2543,4 +2543,13 @@ button {
   }
 }
 
+.properties-items {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: none;
+}
 
+.properties-items.show {
+  opacity: 1;
+  display: block;
+}

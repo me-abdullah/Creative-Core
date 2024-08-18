@@ -184,3 +184,37 @@ backButton.addEventListener('click', () => {
   carousel.classList.remove('showDetail');
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.properties-items');
+    const filterLinks = document.querySelectorAll('.properties-filter a');
+
+    function filterItems(filter) {
+        items.forEach(item => {
+            if (filter === '*' || item.classList.contains(filter.substring(1))) {
+                item.style.display = 'block'; // Show the item
+            } else {
+                item.style.display = 'none'; // Hide the item
+            }
+        });
+    }
+
+    function handleFilterClick(event) {
+        event.preventDefault();
+
+        // Remove active class from all filter links
+        filterLinks.forEach(link => link.classList.remove('is_active'));
+
+        // Add active class to clicked filter link
+        event.target.classList.add('is_active');
+
+        // Get filter value and filter items
+        const filter = event.target.getAttribute('data-filter');
+        filterItems(filter);
+    }
+
+    // Initial filter (show all items)
+    filterItems('*');
+
+    filterLinks.forEach(link => link.addEventListener('click', handleFilterClick));
+});
