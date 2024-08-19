@@ -537,25 +537,38 @@ body {
   color: #fff;
 }
 
+/* Common cursor styles */
 .cursor-dot,
 .cursor-outline {
   position: fixed;
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
-  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Cursor dot */
 .cursor-dot {
   width: 10px;
   height: 10px;
   background-color: #ab182b;
+  transform: translate(-50%, -50%);
 }
 
+/* Cursor outline */
 .cursor-outline {
   width: 40px;
   height: 40px;
   border: 2px solid rgba(122, 119, 119, 0.5);
+  transform: translate(-50%, -50%);
+}
+
+/* Hover effect to animate scaling */
+.cursor-dot.hover,
+.cursor-outline.hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(171, 24, 43, 0.8); /* Change color on hover */
+  border-color: rgba(122, 119, 119, 0.8); /* Change border color on hover */
 }
 
 .typing-demo {
@@ -2553,3 +2566,6 @@ button {
   opacity: 1;
   display: block;
 }
+
+
+

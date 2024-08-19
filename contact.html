@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,300&display=swap"
       rel="stylesheet"
     />
-
+    <script src="js/form-message.js"></script>
     <!-- Icon Font Stylesheet -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
@@ -141,9 +141,7 @@
                   >Services</a
                 >
                 <div class="dropdown-menu rounded-0 m-0">
-                  <a href="digitizing.html" class="dropdown-item"
-                    >Digitizing</a
-                  >
+                  <a href="digitizing.html" class="dropdown-item">Digitizing</a>
                   <a href="vector.html" class="dropdown-item">Vector</a>
                   <a href="patches.html" class="dropdown-item">Patches</a>
                 </div>
@@ -156,7 +154,7 @@
               <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
             <a
-            href="contact.html"
+              href="contact.html"
               class="buttonanimation btn px-3 d-none d-lg-flex bg-dark text-white"
               >Get a Quote</a
             >
@@ -164,38 +162,30 @@
         </nav>
       </div>
       <!-- Navbar End -->
-      <!-- Header Start -->
 
+      <!-- Header Start -->
       <div class="container-fluid header bg-white p-0">
         <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
           <div class="col-md-6 p-5 mt-lg-5">
-            <h1 class="display-5 animated fadeIn mb-4 typing-demo">
-              Find A <span class="customlight">Perfect Patch</span>
-            </h1>
-            <p class="animated fadeIn mb-4 pb-2">
-              Find the perfect patch for any occasion with our expert digitizing
-              services. Our careful attention and creativity ensure each patch
-              meets your specific needs, adding a unique touch to every event.
-            </p>
-            <a
-              href=""
-              class="btn bg-dark text-white py-3 px-5 me-3 animated fadeIn buttonanimation"
-              >Get Started</a
-            >
+            <h1 class="display-5 animated fadeIn mb-4">Contact</h1>
+            <nav aria-label="breadcrumb animated fadeIn">
+              <ol class="breadcrumb text-uppercase">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li
+                  class="breadcrumb-item text-body active"
+                  aria-current="page"
+                >
+                  Contact
+                </li>
+              </ol>
+            </nav>
           </div>
           <div class="col-md-6 animated fadeIn">
-            <div class="owl-carousel header-carousel">
-              <div class="owl-carousel-item">
-                <img class="img-fluid" src="img/patches/custom-g.gif" alt="" />
-              </div>
-              <!-- <div class="owl-carousel-item">
-            <img class="img-fluid" src="img/patches/image004.gif" alt="" />
-          </div> -->
-            </div>
+            <img class="img-fluid" src="img/paralax.png" alt="" />
           </div>
         </div>
       </div>
-
       <!-- Header End -->
 
       <!-- Search Start -->
@@ -317,84 +307,95 @@
             </div>
             <div class="col-md-6">
               <div class="wow fadeInUp" data-wow-delay="0.5s">
-                <form name="sentMessage" id="contactForm" method="POST" action="send_email.php" novalidate="novalidate" onsubmit="return validateForm(event)">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    name="fname"
-                                    id="fname"
-                                    placeholder="Your Name"
-                                    required="required"
-                                    autocomplete="off"
-                                />
-                                <p class="help-block text-danger" id="nameError"></p>
-                                <label for="name">Your Name</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    name="email"
-                                    id="email"
-                                    placeholder="Your Email"
-                                    required="required"
-                                    autocomplete="off"
-                                />
-                                <p class="help-block text-danger" id="emailError"></p>
-                                <label for="email">Your Email</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    name="subject"
-                                    id="subject"
-                                    placeholder="Subject"
-                                    required="required"
-                                    autocomplete="off"
-                                />
-                                <p class="help-block text-danger" id="subjectError"></p>
-                                <label for="subject">Subject</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea
-                                    class="form-control"
-                                    name="message"
-                                    id="message"
-                                    placeholder="Leave a message here"
-                                    style="height: 150px"
-                                    required="required"
-                                    autocomplete="off"
-                                ></textarea>
-                                <p class="help-block text-danger" id="messageError"></p>
-                                <label for="message">Message</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button
-                                class="btn buttonanimation text-white w-100 py-3"
-                                type="submit"
-                                id="sendMessageButton"
-                            >
-                                Send Message
-                            </button>
-                        </div>
-                        <div class="col-12 mt-3">
-                            <p id="formSuccessMessage" class="text-success" style="display: none;">
-                                Your message has been sent successfully!
-                            </p>
-                        </div>
+                <form
+                  name="sentMessage"
+                  id="contactForm"
+                  method="POST"
+                  action="send_email.php"
+                  novalidate="novalidate"
+                  onsubmit="return validateForm(event)"
+                >
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="fname"
+                          id="fname"
+                          placeholder="Your Name"
+                          required="required"
+                          autocomplete="off"
+                        />
+                        <p class="help-block text-danger" id="nameError"></p>
+                        <label for="name">Your Name</label>
+                      </div>
                     </div>
-                </form>   
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input
+                          type="email"
+                          class="form-control"
+                          name="email"
+                          id="email"
+                          placeholder="Your Email"
+                          required="required"
+                          autocomplete="off"
+                        />
+                        <p class="help-block text-danger" id="emailError"></p>
+                        <label for="email">Your Email</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="subject"
+                          id="subject"
+                          placeholder="Subject"
+                          required="required"
+                          autocomplete="off"
+                        />
+                        <p class="help-block text-danger" id="subjectError"></p>
+                        <label for="subject">Subject</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <textarea
+                          class="form-control"
+                          name="message"
+                          id="message"
+                          placeholder="Leave a message here"
+                          style="height: 150px"
+                          required="required"
+                          autocomplete="off"
+                        ></textarea>
+                        <p class="help-block text-danger" id="messageError"></p>
+                        <label for="message">Message</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button
+                        class="btn buttonanimation text-white w-100 py-3"
+                        type="submit"
+                        id="sendMessageButton"
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                    <div
+                      id="formSuccessMessage"
+                      class="text-success"
+                      style="display: none"
+                    >
+                      <div class="alert alert-success" role="alert">
+                        Your message has been sent successfully!
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -582,7 +583,5 @@
 
     <!-- SMTP Javascript -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-    
   </body>
 </html>

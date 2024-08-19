@@ -66,3 +66,52 @@
     // Initial setup
     updateItems('*');
   });
+
+  //Pagination 
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const paginationLinks = document.querySelectorAll('.pagination a');
+    const propertiesItems = document.querySelectorAll('.properties-items');
+  
+    let itemsPerPage = 4; // Default number of items per page
+    let currentPage = 1;
+  
+    // Function to update items based on pagination
+    function updateItems(page = 1) {
+      const startIndex = (page - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+  
+      propertiesItems.forEach(item => {
+        item.classList.remove('show');
+        item.style.display = 'none';
+      });
+  
+      propertiesItems.forEach((item, index) => {
+        if (index >= startIndex && index < endIndex) {
+          item.classList.add('show');
+          item.style.display = 'block';
+        }
+      });
+    }
+  
+    // Event listener for pagination links
+    paginationLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        paginationLinks.forEach(l => l.classList.remove('is_active'));
+        link.classList.add('is_active');
+  
+        let page = link.getAttribute('data-page');
+        if (page === 'next') {
+          currentPage++;
+        } else {
+          currentPage = parseInt(page);
+        }
+        updateItems(currentPage);
+      });
+    });
+  
+    // Initial setup
+    updateItems(currentPage);
+  });
+  
