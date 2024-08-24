@@ -2465,3 +2465,24 @@ button {
     opacity: 1;
     display: block
 }
+
+@media (max-width: 768px) {
+    .topic {
+      font-size: 1.8rem; /* Adjust for mobile */
+    }
+    
+    .des {
+      font-size: 1rem; /* Adjust for mobile */
+    }
+  }
+  
+  /* Extra small screens (phones in portrait mode) */
+  @media (max-width: 480px) {
+    .topic {
+      font-size: 1.5rem; /* Further adjustment */
+    }
+    
+    .des {
+      font-size: 0.9rem; /* Further adjustment */
+    }
+  }
